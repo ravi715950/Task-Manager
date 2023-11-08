@@ -3,7 +3,7 @@ import { httpAxios } from "@/helper/httpHelper";
 export async function signUp(user) {
   const result = await httpAxios
     .post("/api/users", user)
-    .then((response) => response.data).catch((error)=>console.log(error))
+    .then((response) => response.data);
 
   return result;
 }
