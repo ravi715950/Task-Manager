@@ -15,8 +15,8 @@ const CustomNavbar = () => {
     try {
       const result = await logout();
       console.log(result);
-      context.setUser(undefined);
-      router.push("/");
+      toast.success("Logout Successful");
+      router.push("/login");
     } catch (error) {
       console.log(error);
       toast.error("Logout Error");
