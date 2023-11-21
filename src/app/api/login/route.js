@@ -2,6 +2,11 @@ import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { User } from "@/models/users";
+import { connectDb } from "@/helper/db";
+
+
+connectDb();
+
 
 export async function POST(request) {
   console.log("login api");
@@ -9,9 +14,7 @@ export async function POST(request) {
 
   try {
     // 1.get user
-    const user = await User.findOne({
-      email: email,
-    });
+    const user = await User.findOne({email});
 
     if (user == null) {
       throw new Error("user not found !!");
@@ -25,7 +28,7 @@ export async function POST(request) {
 
     // 3. generate token
 
-    const token = jwt.sign(
+    const token =  await jwt.sign(
       {
         _id: user._id,
         name: user.name,
