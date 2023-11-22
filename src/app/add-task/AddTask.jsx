@@ -65,7 +65,7 @@ const AddTask = () => {
             </label>
             <input
               type="text"
-              className="w-full p-3 rounded-3xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
+              className="w-full p-3 rounded bg-[#04364A] focus:ring-gray-400-100 border border-[#04364A]"
               id="task_title"
               name="task_title"
               onChange={(event) => {
@@ -86,7 +86,7 @@ const AddTask = () => {
               Content
             </label>
             <textarea
-              className="w-full p-3 rounded-3xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
+              className="w-full p-3 rounded bg-[#04364A] focus:ring-gray-400-100 border border-[#04364A] text-white"
               id="task_content"
               rows={5}
               name="task_content"
@@ -110,7 +110,7 @@ const AddTask = () => {
             </label>
             <select
               id="task_status"
-              className="w-full p-3 rounded-3xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
+              className="w-full p-3 rounded bg-[#04364A] focus:ring-gray-400-100 border border-[#04364A] text-white"
               name="task_status"
               onChange={(event) => {
                 setTask({
@@ -129,11 +129,11 @@ const AddTask = () => {
           </div>
 
           {/* button  actions */}
-          <div className="mt-4 flex justify-center">
-            <button className="bg-blue-600 py-2 px-3 rounded-lg hover:bg-blue-800">
+          <div className="mt-5 flex justify-center">
+            <button   className="px-5 py-2 bg-green-600  rounded hover:bg-green-400 text-white">
               Add Task{" "}
             </button>
-            <button className="bg-red-600 py-2 px-3 rounded-lg hover:bg-red-800 ms-3">
+            <button className="bg-red-600 px-5 py-2 rounded hover:bg-red-800 ms-3 text-white">
               Clear
             </button>
           </div>

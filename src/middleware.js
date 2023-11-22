@@ -20,7 +20,7 @@ export function middleware(request) {
   if (loggedInUserNotAccessPaths) {
     // access not secured route
     if (authToken) {
-      return NextResponse.redirect(new URL("/profile/user", request.url));
+      return NextResponse.redirect(new URL("/", request.url));
     }
   } else {
     // accessing secured route

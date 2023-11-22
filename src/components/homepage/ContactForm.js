@@ -42,7 +42,7 @@ const ContactForm = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"
+              className="w-full p-3 rounded bg-[#04364A] focus:ring-gray-400-100 border border-[#04364A]"
               required
             />
           </div>
@@ -59,7 +59,7 @@ const ContactForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"
+              className="w-full p-3 rounded bg-[#04364A] focus:ring-gray-400-100 border border-[#04364A]"
               required
             />
           </div>
@@ -76,14 +76,14 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleChange}
               rows="5"
-              className="w-full px-4 py-2 border rounded-md resize-none focus:outline-none focus:ring focus:border-blue-500"
+              className="w-full p-3 rounded bg-[#04364A] focus:ring-gray-400-100 border border-[#04364A] text-white"
               required
             />
           </div>
           <div className="text-center">
             <button
               type="submit"
-              className="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:shadow-lg transition duration-300"
+              className="px-6 py-3 bg-green-600  rounded hover:bg-green-400 text-white"
             >
               Submit
             </button>

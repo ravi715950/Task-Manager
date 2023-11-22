@@ -4,7 +4,7 @@ import bannerImage from "../../assets/login.svg";
 import Image from "next/image";
 const BannerSection = () => {
   return (
-    <div className="bg-blue-500 text-white p-4">
+    <div className="bg-[#64CCC5] text-white p-4">
       <div className="container mx-auto flex items-center justify-around py-5">
         <div className="mr-4">
           <Image
@@ -21,7 +21,7 @@ const BannerSection = () => {
             Organize your tasks efficiently with our task manager app.
           </p>
           <button
-            className="bg-white text-blue-500 px-4 py-2 mt-4 rounded-md shadow-md hover:shadow-lg transition duration-300"
+            className="bg-white text-[#04364A] px-4 py-2 mt-4 rounded-md shadow-md hover:shadow-lg transition duration-300"
             onClick={() => {
               // Add your action button click event handler logic here
               console.log("Action button clicked!");

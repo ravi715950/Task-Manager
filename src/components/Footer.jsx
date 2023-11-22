@@ -3,15 +3,15 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="h-40 bg-blue-600 mt-5">
+    <footer className="h-40 bg-[#176B87] mt-5">
       <div className="flex p-5 justify-around">
-        <div className="text-center flex flex-col justify-center">
-          <h1 className="text-3xl">Welcome to work manager</h1>
+        <div className="text-center flex flex-col justify-center text-white">
+          <h1 className="text-3xl">Welcome to Task manager</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, ab!
           </p>
         </div>
-        <div className="text-center">
+        <div className="text-center text-white">
           <h1>Important Links</h1>
           <ul>
             <li>
