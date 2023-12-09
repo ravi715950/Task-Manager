@@ -10,13 +10,12 @@ const AddTask = () => {
   // console.log("this is add task component");
 
   const context = useContext(UserContext);
-  console.log(context.user._id)
 
   const [task, setTask] = useState({
     title: "",
     content: "",
     status: "none",
-    userId: context.user._id,
+    userId: context.user?._id,
   });
 
   const handleAddTask = async (event) => {
