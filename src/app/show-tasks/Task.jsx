@@ -12,11 +12,11 @@ const Task = ({ task, deleteTaskParent }) => {
   return (
     <div
       className={` shadow-lg mt-2 rounded-md ${
-        task.status == "completed" ? "bg-green-800" : "bg-gray-800"
+        task.status == "completed" ? "bg-green-800" : "bg-[#176B87]"
       }`}
     >
       <div className="p-5">
-        <div className="flex justify-between">
+        <div className="flex justify-between text-white">
           <h1 className="text-2xl font-semibold">{task.title}</h1>
           <span
             onClick={() => {
@@ -27,13 +27,13 @@ const Task = ({ task, deleteTaskParent }) => {
             <RxCross1 />
           </span>
         </div>
-        <p className="font-normal">{task.content}</p>
+        <p className="font-normal text-white">{task.content}</p>
         <div className="flex justify-between mt-3">
-          <p className="text-left">
-            Status: <span className="font-bold">{task.status}</span>
+          <p className="text-left text-white">
+            Status: <span className="font-bold ">{task.status}</span>
           </p>
-          <p className="text-right">
-            Author: <span className="font-bold">{user?.name}</span>
+          <p className="text-right text-white">
+            Author: <span className="font-bold ">{user?.name}</span>
           </p>
         </div>
       </div>

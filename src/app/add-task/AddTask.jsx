@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import loginSvg from "../../assets/login.svg";
 import Image from "next/image";
 import { addTask } from "@/services/taskService";
-import { toast } from "react-toastify";
+import { taost, toast } from "react-toastify";
 import UserContext from "@/context/userContext";
 
 const AddTask = () => {
@@ -27,7 +27,7 @@ const AddTask = () => {
       const result = await addTask(task);
       console.log(result);
       toast.success("Your task is added !!", {
-        position: "top-center",
+        position: "top-right",
       });
 
       setTask({
@@ -141,7 +141,6 @@ const AddTask = () => {
             </button>
           </div>
 
-          {/* {JSON.stringify(task)} */}
         </form>
       </div>
     </div>

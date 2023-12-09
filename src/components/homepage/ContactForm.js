@@ -1,5 +1,7 @@
 "use client";
+import { addContact } from "@/services/contactService";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -15,16 +17,29 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Add your form submission logic here (e.g., sending the form data to the server)
-    console.log(formData);
-    // Reset form fields after submission
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    try {
+      const result = await addContact(formData);
+      console.log(result);
+      toast.success("Form Submitted !!", {
+        position: "top-right",
+      });
+
+      // Reset form fields after submission
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.log(error);
+      toast.error("form not added !!", {
+        position: "top-center",
+      });
+    }
+  
   };
 
   return (

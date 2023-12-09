@@ -93,7 +93,7 @@ setLoading(true);
                 htmlFor="user_name"
                 className="block text-sm font-medium mb-2 ps-2 text-[#04364A]"
               >
-                Username*
+                Name*
               </label>
               <input
                 type="text"

@@ -14,7 +14,7 @@ const ActionSection = () => {
           Start managing your tasks efficiently with our task manager app.
         </p>
         <button
-          className="bg-white bg-[#64CCC5] py-3 px-6 rounded-md shadow-md hover:shadow-lg transition duration-300"
+          className="bg-[#176B87] py-3 px-6 rounded-md shadow-md hover:shadow-lg transition duration-300"
           onClick={() => {
             // Add your action button click event handler logic here
             console.log("Get Started button clicked!");

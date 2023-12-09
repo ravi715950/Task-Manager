@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
     <body className={inter.className}>
       <UserProvider>
-        <ToastContainer />
+        <ToastContainer autoClose={2000}/>
         <CustomNavbar />
         <div className="mt-0 min-h-[65vh]">{children}</div>
         <Footer />
