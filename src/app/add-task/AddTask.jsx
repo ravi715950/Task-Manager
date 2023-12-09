@@ -1,19 +1,22 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import loginSvg from "../../assets/login.svg";
 import Image from "next/image";
 import { addTask } from "@/services/taskService";
-import { taost, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import UserContext from "@/context/userContext";
 
 const AddTask = () => {
   // console.log("this is add task component");
+
+  const context = useContext(UserContext);
+  console.log(context.user._id)
 
   const [task, setTask] = useState({
     title: "",
     content: "",
     status: "none",
-    // temp solution
-    userId: "64a506ab413f1d5bcafcdbec",
+    userId: context.user._id,
   });
 
   const handleAddTask = async (event) => {
