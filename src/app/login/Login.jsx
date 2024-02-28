@@ -54,79 +54,79 @@ const Login = () => {
   };
 
   return (
-    <div className="grid grid-cols-12">
-      <div className="col-span-4 col-start-5 ">
-        <div className="py-5"></div>
-
-        <h1 className="text-3xl text-center text-[#04364A] font-semibold">Login Here </h1>
-
-        <form action="#!" onSubmit={loginFormSubmitted}>
-          <div className="mt-3">
-            <label
-              htmlFor="user_email"
-              className="block text-sm font-medium mb-2 ps-2 text-[#04364A]"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              className="w-full p-3 rounded bg-[#04364A] focus:ring-gray-400-100 border border-[#04364A]"
-              placeholder="Enter your email"
-              id="user_email"
-              name="user_email"
-              onChange={(event) => {
-                setLoginData({
-                  ...loginData,
-                  email: event.target.value,
-                });
-              }}
-              value={loginData.email}
-            />
-          </div>
-          {/* password */}
-          <div className="mt-5">
-            <label
-              htmlFor="user_password"
-              className="block text-sm font-medium mb-2 ps-2 text-[#04364A]"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              className="w-full p-3 rounded bg-[#04364A] focus:ring-gray-400-100 border border-[#04364A]"
-              placeholder="Enter your password"
-              id="user_password"
-              onChange={(event) => {
-                setLoginData({
-                  ...loginData,
-                  password: event.target.value,
-                });
-              }}
-              value={loginData.password}
-            />
-          </div>
-
-          <div className="mt-5 text-center">
-            <button
-              type="submit"
-              className="px-5 py-2 bg-green-600  rounded hover:bg-green-400 text-white"
-            >
-             {loading ? "Loading..." : "Login"} 
-             
-            </button>
-            
-            <button
-              type="button"
-              className="px-5 py-2 bg-orange-600 ms-3 rounded hover:bg-orange-400 text-white"
-              onClick={reset}
-           >
-              Reset
-            </button>
-          </div>
-        </form>
-      </div>
-      {/* {JSON.stringify(loginData)} */}
+    <div className="grid grid-cols-1 md:grid-cols-12">
+    <div className="md:col-span-4 md:col-start-5">
+      <div className="py-5"></div>
+  
+      <h1 className="text-3xl text-center text-[#04364A] font-semibold">Login Here </h1>
+  
+      <form action="#!" onSubmit={loginFormSubmitted} className="px-4">
+        <div className="mt-3">
+          <label
+            htmlFor="user_email"
+            className="block text-sm font-medium mb-2 ps-2 text-[#04364A]"
+          >
+            Email
+          </label>
+          <input
+            type="email"
+            className="w-full p-3 rounded bg-[#04364A] focus:ring-gray-400-100 border border-[#04364A]"
+            placeholder="Enter your email"
+            id="user_email"
+            name="user_email"
+            onChange={(event) => {
+              setLoginData({
+                ...loginData,
+                email: event.target.value,
+              });
+            }}
+            value={loginData.email}
+          />
+        </div>
+        {/* password */}
+        <div className="mt-5">
+          <label
+            htmlFor="user_password"
+            className="block text-sm font-medium mb-2 ps-2 text-[#04364A]"
+          >
+            Password
+          </label>
+          <input
+            type="password"
+            className="w-full p-3 rounded bg-[#04364A] focus:ring-gray-400-100 border border-[#04364A]"
+            placeholder="Enter your password"
+            id="user_password"
+            onChange={(event) => {
+              setLoginData({
+                ...loginData,
+                password: event.target.value,
+              });
+            }}
+            value={loginData.password}
+          />
+        </div>
+  
+        <div className="mt-5 text-center">
+          <button
+            type="submit"
+            className="w-full md:w-auto px-5 py-2 bg-green-600 rounded hover:bg-green-400 text-white"
+          >
+            {loading ? "Loading..." : "Login"} 
+          </button>
+          
+          <button
+            type="button"
+            className="w-full md:w-auto mt-3 md:mt-0 md:ms-3 px-5 py-2 bg-orange-600 rounded hover:bg-orange-400 text-white"
+            onClick={reset}
+          >
+            Reset
+          </button>
+        </div>
+      </form>
     </div>
+    {/* {JSON.stringify(loginData)} */}
+  </div>
+  
   );
 };
 

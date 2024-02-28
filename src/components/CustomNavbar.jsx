@@ -4,7 +4,7 @@ import UserContext from "@/context/userContext";
 import { logout } from "@/services/userService";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 
 const CustomNavbar = () => {
@@ -23,14 +23,46 @@ const CustomNavbar = () => {
     }
   }
 
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav className="bg-[#176B87] h-16 py-2 px-36 flex justify-between items-center">
+    <nav className="bg-[#176B87] py-2 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-36 flex flex-wrap items-center justify-between">
       <div className="brand">
         <h1 className="text-2xl font-semibold text-white">
           <a href="#!">Task Manager</a>
         </h1>
       </div>
-      <div>
+
+      {/* Burger Icon for Mobile */}
+      <div className="block sm:hidden">
+        <button
+          onClick={toggleMenu}
+          className="text-white focus:outline-none"
+          aria-label="Toggle Navigation"
+        >
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      {/* Navigation Links */}
+      <div className={`sm:flex ${isMenuOpen ? 'flex' : 'hidden'}`}>
         <ul className="flex space-x-5">
           {context.user && (
             <>
@@ -52,8 +84,7 @@ const CustomNavbar = () => {
             </>
           )}
         </ul>
-      </div>
-      <div>
+
         <ul className="flex space-x-3 text-white">
           {context.user && (
             <>

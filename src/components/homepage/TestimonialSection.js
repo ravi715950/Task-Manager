@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -51,11 +51,28 @@ const testimonials = [
 ];
 
 const TestimonialSection = () => {
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const slidesToShow = windowWidth < 768 ? 1 : 3;
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Display 3 testimonials at once
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
@@ -63,19 +80,19 @@ const TestimonialSection = () => {
 
   return (
     <div className="bg-[#04364A] py-10">
-      <div className="mx-auto">
-        <h2 className="text-3xl font-semibold text-center mb-8 text-white">
-          Testimonials
-        </h2>
-        <div className="max-w-5xl mx-auto">
-          <Slider {...settings}>
-            {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-            ))}
-          </Slider>
-        </div>
+    <div className="mx-auto">
+      <h2 className="text-3xl font-semibold text-center mb-8 text-white">
+        Testimonials
+      </h2>
+      <div className="max-w-5xl mx-auto">
+        <Slider {...settings}>
+          {testimonials.map((testimonial) => (
+            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+          ))}
+        </Slider>
       </div>
     </div>
+  </div>
   );
 };
 
