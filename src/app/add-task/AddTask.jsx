@@ -5,11 +5,13 @@ import Image from "next/image";
 import { addTask } from "@/services/taskService";
 import { taost, toast } from "react-toastify";
 import UserContext from "@/context/userContext";
+import { useRouter } from "next/navigation";
 
 const AddTask = () => {
   // console.log("this is add task component");
 
   const context = useContext(UserContext);
+  const router = useRouter();
 
   const [task, setTask] = useState({
     title: "",
@@ -28,6 +30,7 @@ const AddTask = () => {
       toast.success("Your task is added !!", {
         position: "top-right",
       });
+      router.push('/show-tasks')
 
       setTask({
         title: "",
@@ -51,8 +54,8 @@ const AddTask = () => {
   }
 
   return (
-    <div className="grid grid-cols-12 justify-center">
-    <div className="col-span-12 sm:col-span-8 md:col-span-6 lg:col-span-4 p-5 shadow-sm">
+    <div className="justify-center mx-auto" style={{maxWidth:'600px'}}>
+    <div className="p-5 shadow-sm">
       <div className="my-8 flex justify-center">
         <Image
           src={loginSvg}
