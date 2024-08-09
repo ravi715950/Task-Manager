@@ -16,7 +16,7 @@ export async function login(loginData) {
 }
 export async function currentUser() {
   const result = await httpAxios
-    .get("/api/current")
+    .get("/api/currentUser")
     .then((response) => response.data);
   return result;
 }

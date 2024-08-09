@@ -17,7 +17,7 @@ const AddTask = () => {
     title: "",
     content: "",
     status: "none",
-    userId: context.user?._id,
+    userId: context.user?.user?._id,
   });
 
   const handleAddTask = async (event) => {

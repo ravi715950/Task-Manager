@@ -11,6 +11,8 @@ try {
 
     response.cookies.set("authToken", "", {
         httpOnly: true,
+        path: "/",        
+        maxAge: 0,         
       });
  return response;
 } catch (error) {

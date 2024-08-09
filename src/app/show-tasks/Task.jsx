@@ -34,9 +34,7 @@ const Task = ({ task, deleteTaskParent }) => {
         <p className="text-left text-white mb-2 sm:mb-0">
           Status: <span className="font-bold">{task.status}</span>
         </p>
-        <p className="text-left text-white">
-          Author: <span className="font-bold">{user?.name}</span>
-        </p>
+      
       </div>
     </div>
   </div>

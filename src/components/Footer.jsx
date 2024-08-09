@@ -3,36 +3,20 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#176B87] py-5 md:py-10">
-    <div className="flex flex-col md:flex-row justify-around">
-      <div className="text-center mb-5 md:mb-0">
-        <h1 className="text-3xl text-white">Welcome to Task Manager</h1>
-        <p className="text-white">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, ab!
-        </p>
+  <footer class="bg-gray-800 text-white py-4 px-3 mt-16">
+  <div class="container mx-auto flex flex-wrap items-center justify-between">
+      <div class="w-full md:w-1/2 md:text-center md:mb-0 mb-8">
+          <p class="text-xs text-gray-400 md:text-sm">Copyright 2024 &copy; All Rights Reserved</p>
       </div>
-      <div className="text-center text-white">
-        <h1 className="mb-3 md:mb-0">Important Links</h1>
-        <ul>
-          <li>
-            <a href="#!" className="hover:text-blue-200">
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a href="#!" className="hover:text-blue-200">
-              YouTube
-            </a>
-          </li>
-          <li>
-            <a href="#!" className="hover:text-blue-200">
-              Instagram
-            </a>
-          </li>
-        </ul>
+      <div class="w-full md:w-1/2 md:text-center md:mb-0 mb-8">
+          <ul class="list-reset flex justify-center flex-wrap text-xs md:text-sm gap-3">
+              <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+              <li class="mx-4"><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Terms of Use</a></li>
+          </ul>
       </div>
-    </div>
-  </footer>
+  </div>
+</footer>
   
   );
 };

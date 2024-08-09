@@ -24,10 +24,11 @@ const router = useRouter();
 
   useEffect(() => {
     if (context.user) {
-      loadTasks(context.user._id);
+      loadTasks(context?.user?.user?._id);
     }
   }, [context.user]);
-
+ 
+console.log(tasks)
   async function deleteTaskParent(tasksId) {
     try {
       const result = await deleteTask(tasksId);
